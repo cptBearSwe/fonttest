@@ -1,9 +1,7 @@
 package com.apps.bjorn.fonttest;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -14,16 +12,11 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,8 +44,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     static void writeToFile(String text) {
         try {
-                //File external = Environment.getExternalStorageDirectory();
-                //String sdcardPath = external.getPath();
                 File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
                 File file = new File(path, "/" + "myfile.txt");
                 file.createNewFile();
@@ -67,8 +58,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
             android.util.Log.d("failed to save file", e.toString());
         }
     }
-
-
 
     public void readText(){
         List<String> lines = new ArrayList<>();
